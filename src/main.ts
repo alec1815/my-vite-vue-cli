@@ -1,14 +1,5 @@
-export function render(){
-  document.querySelector("#app")!.innerHTML = "main"
-}
+import { createApp } from "vue"
+import App from "./App.vue"
+const app = createApp(App)
 
-render()
-
-if(import.meta.hot){
-  import.meta.hot.accept((newModule)=>{
-    console.log("render")
-    newModule.render()
-  })
-}
-
-console.log("page main")
+app.mount("#app")
